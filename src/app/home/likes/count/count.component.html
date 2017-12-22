@@ -1,0 +1,14 @@
+<p>child content</p>
+<h2>{{counter | async}},{{username$ | async}}</h2>
+<button (click)="setName()">set name</button>
+<button (click)="resetName()">reset name</button>
+{{ post$ | async}}
+<div class="container" *ngIf="post$ | async as p">
+  <h1>{{ p.text }}</h1>
+  <h3>{{ p.likes }}</h3>
+  <input type="text" [(ngModel)]="inputText">
+  <button (click)="editTitle()">change Title</button>
+  <button (click)="like()">Like!</button>
+  <button (click)="dislike()">Dislike!</button>
+  <button (click)="resetPost()">Reset</button>
+</div>
